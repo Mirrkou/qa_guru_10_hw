@@ -19,7 +19,7 @@ public class OwnerTests {
         System.out.println(login);
         System.out.println(password);
 
-        String message = format("I login as with password as", login, password);
+        String message = format("i login as %s with password %s", login, password);
         System.out.println(message);
     }
 }

@@ -9,12 +9,14 @@ public class SystemPropertiesTests {
     void someTest() {
         String value = System.getProperty("value");
         System.out.println(value);
+        // null
     }
 
     @Test
     void someTest1() {
         String value = System.getProperty("value", "default_value");
         System.out.println(value);
+        // default_value
     }
 
     @Test
@@ -22,6 +24,7 @@ public class SystemPropertiesTests {
         System.setProperty("value", "another_value");
         String value = System.getProperty("value");
         System.out.println(value);
+        // another_value
     }
 
     @Test
@@ -29,6 +32,8 @@ public class SystemPropertiesTests {
         System.setProperty("value", "another_value");
         String value = System.getProperty("value", "default_value");
         System.out.println(value);
+        // ?
+        // another_value !
     }
 
     @Test
@@ -36,6 +41,11 @@ public class SystemPropertiesTests {
     void someTest4() {
         String value = System.getProperty("browser", "chrome");
         System.out.println(value);
+        //  gradle clean properties_tests
+        //  chrome
+
+        //  gradle clean properties_tests -Dbrowser=opera
+        //  opera
     }
 
     @Test
@@ -48,5 +58,6 @@ public class SystemPropertiesTests {
         System.out.println(browser);
         System.out.println(version);
         System.out.println(browserSize);
+        // gradle clean properties_tests -Dbrowser=opera -Dversion=93
     }
 }
