@@ -5,36 +5,37 @@ import guru.qa.pages.RegistrationPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class RegisterStudent extends StudentData {
+public class RegisterStudentTest {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    StudentData studentData = new StudentData();
 
     @DisplayName("Регистрация студента")
     @Test
     void fillForm() {
         registrationPage.openPage()
-                        .typeFirstName(firstName)
-                        .typeLastName(lastName)
-                        .typeUserEmail(userEmail)
+                        .typeFirstName(studentData.firstName)
+                        .typeLastName(studentData.lastName)
+                        .typeUserEmail(studentData.userEmail)
                         .chooseGender("Female")
-                        .typeMobile(mobile)
+                        .typeMobile(studentData.mobile)
                         .chooseSubject("Arts")
                         .uploadPicture()
                         .chooseHobbies("Music")
-                        .typeCurrentAddress(address)
+                        .typeCurrentAddress(studentData.address)
                         .chooseState("NCR")
                         .chooseCity("Noida");
         registrationPage.calendar.setDate("9", "5", "1987");
         registrationPage.submitClick();
-        registrationPage.checkResultsValue("Student Name", firstName)
-                        .checkResultsValue("Student Email", userEmail)
+        registrationPage.checkResultsValue("Student Name", studentData.firstName)
+                        .checkResultsValue("Student Email", studentData.userEmail)
                         .checkResultsValue("Gender", "Female")
-                        .checkResultsValue("Mobile", mobile)
+                        .checkResultsValue("Mobile", studentData.mobile)
                         .checkResultsValue("Date of Birth", "9 June,1987")
                         .checkResultsValue("Subjects", "Arts")
                         .checkResultsValue("Hobbies", "Music")
                         .checkResultsValue("Picture", "avatar.png")
-                        .checkResultsValue("Address", address)
+                        .checkResultsValue("Address", studentData.address)
                         .checkResultsValue("State and City", "NCR Noida");
     }
 }
