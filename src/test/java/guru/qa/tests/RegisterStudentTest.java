@@ -3,9 +3,11 @@ package guru.qa.tests;
 import guru.qa.data.StudentData;
 import guru.qa.pages.RegistrationPage;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class RegisterStudentTest {
+@Tag("registrationPage")
+public class RegisterStudentTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     StudentData studentData = new StudentData();

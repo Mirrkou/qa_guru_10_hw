@@ -1,10 +1,9 @@
 package guru.qa.data;
 
 import com.github.javafaker.Faker;
-import guru.qa.tests.TestBase;
 import java.util.Locale;
 
-public class StudentData extends TestBase {
+public class StudentData {
 
     Faker faker = new Faker(new Locale("ru"));
     public String firstName = faker.name().firstName();

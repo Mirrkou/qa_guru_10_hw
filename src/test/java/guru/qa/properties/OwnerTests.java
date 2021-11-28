@@ -7,7 +7,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("properties")
+@Tag("owner")
 public class OwnerTests {
     public CredentialsConfig credentials =
             ConfigFactory.create(CredentialsConfig.class);
@@ -20,7 +20,7 @@ public class OwnerTests {
         System.out.println(login);
         System.out.println(password);
 
-        String message = format("i login as %s with password %s", login, password);
+        String message = format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", login, password);
         System.out.println(message);
     }
 }
