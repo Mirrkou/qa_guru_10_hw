@@ -22,6 +22,7 @@ public class CommonSearchTest extends TestBase {
     @DisplayName("Поиск шапки через общее поле поиска 'Я ищу'")
     @Test
     void searchHat() {
+        openPage();
         $("#searchInput").setValue("Шапка").pressEnter();
         $(".searching-results__title").shouldHave(text("По запросу «шапка» найдено"));
     }
@@ -29,6 +30,7 @@ public class CommonSearchTest extends TestBase {
     @DisplayName("Поиск джинс через общее поле поиска 'Я ищу'")
     @Test
     void searchJeans() {
+        openPage();
         $("#searchInput").setValue("Джинсы").pressEnter();
         $(".searching-results__title").shouldHave(text("По запросу «джинсы» найдено"));
     }
@@ -36,6 +38,7 @@ public class CommonSearchTest extends TestBase {
     @DisplayName("Открыть информацию о компании")
     @Test
     void openCompanyInfo() {
+        openPage();
         $("[rel='nofollow']").find(byText("О нас")).click();
         $("[class='features__section-header section-header']").shouldHave(text("Наши преимущества"));
     }
@@ -43,6 +46,7 @@ public class CommonSearchTest extends TestBase {
     @DisplayName("Открыть раздел 'Доставка'")
     @Test
     void openDeliverySection() {
+        openPage();
         $("[class='simple-menu__item'] [class='simple-menu__link']").click();
         $("[class='free-shipping-banner']").shouldHave(text("Доставка"));
     }
@@ -50,6 +54,7 @@ public class CommonSearchTest extends TestBase {
     @DisplayName("Открыть раздел 'Работа'")
     @Test
     void openWorkSection() {
+        openPage();
         $("[class='simple-menu__link simple-menu__link--employment']").click();
         $("[class='employment__intro employment__gradient intro']").shouldBe(visible);
     }
