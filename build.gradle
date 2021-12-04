@@ -74,5 +74,12 @@ task all_tests(type: Test) {
         includeTags "properties"
         includeTags "owner"
         includeTags "registrationPage"
+        includeTags "commonSearch"
+    }
+}
+
+task common_search_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "commonSearch"
     }
 }
